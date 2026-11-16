@@ -182,13 +182,13 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 </details>
 
 #### Registro do Ciclo 01 — 12/08
-1. **Desafio do ciclo (em 1 frase):** _…_
-2. **O que implementei (commits / arquivos / links):** _…_
-3. **Objeto(s) de conhecimento mobilizado(s):** _…_
-4. **Desvio ou erro encontrado + causa técnica:** _…_
-5. **Decisão de ajuste + fonte:** _…_
-6. **Feedback recebido e o que mudei:** _…_
-7. **Próximo passo:** _…_
+1. **Desafio do ciclo (em 1 frase):** Entender como utilizar o GitHub de maneira correta e assertiva.
+2. **O que implementei (commits / arquivos / links):** Criei o repositório Algoritmos e Programação no GitHub; instalei o VS Code e o vinculei ao Git; desenvolvi o CRUD com auxílio de colegas e de IAs; usei o app da Smart Fit como base do CRUD.
+3. **Objeto(s) de conhecimento mobilizado(s):** Repositório (pasta que armazena códigos); GitHub (plataforma que hospeda os repositórios, como uma "rede social" de códigos); VS Code (aplicativo de criação e edição de código); commit (meio de levar para o GitHub os códigos escritos no VS Code). Já conhecia GitHub e VS Code, sem uso aprofundado; era novo Python, commit e repositório.
+4. **Desvio ou erro encontrado + causa técnica:** Eu não sabia usar o commit para enviar meus códigos ao GitHub, então baixava o código e o implementava manualmente. Causa: desconhecia o fluxo de controle de versão (commit do Git a partir do VS Code).
+5. **Decisão de ajuste + fonte:** Passei a usar o commit para enviar os códigos ao GitHub. Fonte: videoaula "Aprenda Git e Github em 5 minutos", do canal [Igor Mucharski](https://www.youtube.com/@Mucharskitube), e auxílio do Claude Code.
+6. **Feedback recebido e o que mudei:** Não recebi orientação de professor ou colega neste ciclo. Resolvi por conta própria, com a videoaula e o Claude Code.
+7. **Próximo passo:** Estudar laços de repetição para criar o CRUD, por ser a parte em que eu tinha menos conhecimento.
 
 ## 🟢 CICLO 02 — 19/08 — Variáveis, tipos de dados e entrada/saída
 
