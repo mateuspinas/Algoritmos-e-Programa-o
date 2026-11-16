@@ -213,19 +213,19 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 *Grupo 1 | Prazo segunda 16/11, 23h59 | SEM CONSULTA*
 
 **1a. Objetos de conhecimento identificados (mínimo 3, com vocabulário técnico):**
-1. _…_
-2. _…_
-3. _…_
+1. _Laços de repetição (while e for): necessários para construir a interface e mantê-la ativa para o usuário até que ele termine o registro do treino._
+2. _Estruturas condicionais (if/elif/else): essenciais para evitar que o usuário digite dados incorretos nos campos de preenchimento (validação de entrada) e para dar sequência lógica ao uso do sistema._
+3. _Entrada e saída de dados (input() e print()): o uso correto facilita a experiência do usuário, pois um sistema sem instruções de preenchimento dificulta o manuseio._
 4. _…_ *(opcional)*
 
 **1b. Lacunas — o que não sei e preciso descobrir (mínimo 3, com precisão técnica):**
-1. _…_
-2. _…_
-3. _…_
+1. _Não sei como identificar quando o usuário digita um tipo de dado incorreto em um campo (por exemplo, texto onde se espera número) e exibir uma mensagem informando que o tipo está errado para aquele campo._
+2. _Não sei como usar corretamente o while para criar um laço de início do sistema que mantenha o menu sempre visível para o usuário._
+3. _Não sei como fazer a busca (procura) de um exercício específico dentro do sistema._
 
 **1c. Hipótese inicial em até 5 linhas — com lógica da área de formação:**
 
-> _…_
+> _A primeira versão do CRUD tinha falhas na verificação dos dados (validação de entrada): quando o usuário digitava um dado incorreto em algum campo, o sistema quebrava. Esse problema foi corrigido durante o processo de criação, para evitar a quebra do sistema._
 
 ### 🧩 CAMPO 02 — Aprofundamento pós-aula
 *AV Qualis — Grupo 1 | Segunda 16/11, 23h59*
