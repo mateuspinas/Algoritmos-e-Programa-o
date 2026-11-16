@@ -1,145 +1,179 @@
-# CRUD de exercícios de academia
-# somente com while, for, if, elif, else e variáveis (listas paralelas como "banco de dados")
 
-nomes = []
-grupos = []
-series = []
-repeticoes = []
-cargas = []
+banco_exercicios = ""
+programa_rodando = True
 
-rodando = True
-
-while rodando:
-    print("\n===== ACADEMIA - EXERCÍCIOS =====")
-    print("1 - Cadastrar exercício")
-    print("2 - Listar exercícios")
-    print("3 - Atualizar exercício")
-    print("4 - Remover exercício")
-    print("0 - Sair")
+while programa_rodando:
+    print("\n===== ACADEMIA - EXERCÍCIOS =====\n1 - Cadastrar\n2 - Listar\n3 - Atualizar\n4 - Remover\n0 - Sair")
     opcao = input("Escolha uma opção: ")
 
-    # ---------- CREATE ----------
-    if opcao == "1":
-        nome = input("Nome do exercício: ")
-        grupo = input("Grupo muscular: ")
-        serie = input("Número de séries: ")
-        rep = input("Repetições por série: ")
-        carga = input("Carga (kg): ")
-
-        if nome == "":
-            print("O nome não pode ficar vazio.")
-        else:
-            nomes = nomes + [nome]
-            grupos = grupos + [grupo]
-            series = series + [serie]
-            repeticoes = repeticoes + [rep]
-            cargas = cargas + [carga]
-            print("Exercício cadastrado com sucesso!")
-
-    # ---------- READ ----------
-    elif opcao == "2":
-        if len(nomes) == 0:
-            print("Nenhum exercício cadastrado.")
-        else:
-            print("\n--- Lista de exercícios ---")
-            for i in range(len(nomes)):
-                print(str(i + 1) + ") " + nomes[i]
-                      + " | Grupo: " + grupos[i]
-                      + " | " + series[i] + "x" + repeticoes[i]
-                      + " | Carga: " + cargas[i] + " kg")
-
-    # ---------- UPDATE ----------
-    elif opcao == "3":
-        if len(nomes) == 0:
-            print("Nenhum exercício para atualizar.")
-        else:
-            for i in range(len(nomes)):
-                print(str(i + 1) + ") " + nomes[i])
-            escolha = input("Número do exercício a atualizar: ")
-
-            valido = True
-            if escolha == "":
-                valido = False
-            for letra in escolha:
-                if letra not in "0123456789":
-                    valido = False
-
-            if valido:
-                pos = int(escolha) - 1
-                if pos >= 0 and pos < len(nomes):
-                    print("(Deixe em branco para manter o valor atual)")
-                    novo_nome = input("Novo nome [" + nomes[pos] + "]: ")
-                    novo_grupo = input("Novo grupo [" + grupos[pos] + "]: ")
-                    nova_serie = input("Novas séries [" + series[pos] + "]: ")
-                    nova_rep = input("Novas repetições [" + repeticoes[pos] + "]: ")
-                    nova_carga = input("Nova carga [" + cargas[pos] + "]: ")
-
-                    if novo_nome != "":
-                        nomes[pos] = novo_nome
-                    if novo_grupo != "":
-                        grupos[pos] = novo_grupo
-                    if nova_serie != "":
-                        series[pos] = nova_serie
-                    if nova_rep != "":
-                        repeticoes[pos] = nova_rep
-                    if nova_carga != "":
-                        cargas[pos] = nova_carga
-                    print("Exercício atualizado!")
-                else:
-                    print("Número fora da lista.")
-            else:
-                print("Digite um número válido.")
-
-    # ---------- DELETE ----------
-    elif opcao == "4":
-        if len(nomes) == 0:
-            print("Nenhum exercício para remover.")
-        else:
-            for i in range(len(nomes)):
-                print(str(i + 1) + ") " + nomes[i])
-            escolha = input("Número do exercício a remover: ")
-
-            valido = True
-            if escolha == "":
-                valido = False
-            for letra in escolha:
-                if letra not in "0123456789":
-                    valido = False
-
-            if valido:
-                pos = int(escolha) - 1
-                if pos >= 0 and pos < len(nomes):
-                    confirma = input("Remover '" + nomes[pos] + "'? (s/n): ")
-                    if confirma == "s":
-                        novos_nomes = []
-                        novos_grupos = []
-                        novas_series = []
-                        novas_repeticoes = []
-                        novas_cargas = []
-                        for i in range(len(nomes)):
-                            if i != pos:
-                                novos_nomes = novos_nomes + [nomes[i]]
-                                novos_grupos = novos_grupos + [grupos[i]]
-                                novas_series = novas_series + [series[i]]
-                                novas_repeticoes = novas_repeticoes + [repeticoes[i]]
-                                novas_cargas = novas_cargas + [cargas[i]]
-                        nomes = novos_nomes
-                        grupos = novos_grupos
-                        series = novas_series
-                        repeticoes = novas_repeticoes
-                        cargas = novas_cargas
-                        print("Exercício removido!")
-                    else:
-                        print("Remoção cancelada.")
-                else:
-                    print("Número fora da lista.")
-            else:
-                print("Digite um número válido.")
-
-    # ---------- SAIR ----------
-    elif opcao == "0":
+    if opcao == "0":
         print("Até o próximo treino!")
-        rodando = False
-
-    else:
+        programa_rodando = False
+    elif opcao != "1" and opcao != "2" and opcao != "3" and opcao != "4":
         print("Opção inválida.")
+    else:
+        total_exercicios = 0
+        posicao = -1
+
+        # ---------- READ (opção 2) / mostra os nomes (opções 3 e 4) ----------
+        if opcao != "1":
+            contador = 0
+            nome = grupo = series = repeticoes = carga = ""
+            for caractere in banco_exercicios:
+                if caractere == "|":
+                    contador = contador + 1
+                elif caractere == ";":
+                    total_exercicios = total_exercicios + 1
+                    if opcao == "2":
+                        print(str(total_exercicios) + ") " + nome + " | Grupo: " + grupo + " | " + series + "x" + repeticoes + " | Carga: " + carga + " kg")
+                    else:
+                        print(str(total_exercicios) + ") " + nome)
+                    contador = 0
+                    nome = grupo = series = repeticoes = carga = ""
+                elif contador == 0:
+                    nome = nome + caractere
+                elif contador == 1:
+                    grupo = grupo + caractere
+                elif contador == 2:
+                    series = series + caractere
+                elif contador == 3:
+                    repeticoes = repeticoes + caractere
+                else:
+                    carga = carga + caractere
+            if total_exercicios == 0:
+                print("Nenhum exercício cadastrado.")
+
+            # escolha do exercício (opções 3 e 4)
+            if (opcao == "3" or opcao == "4") and total_exercicios > 0:
+                escolha = input("Número do exercício: ")
+                valido = escolha != ""
+                for caractere in escolha:
+                    if caractere not in "0123456789":
+                        valido = False
+                if valido and (int(escolha) < 1 or int(escolha) > total_exercicios):
+                    valido = False
+                if valido:
+                    posicao = int(escolha) - 1
+                else:
+                    print("Número inválido.")
+
+        # ---------- CREATE (1) / UPDATE (3) / DELETE (4) ----------
+        if opcao == "1" or posicao >= 0:
+            registros_anteriores = ""
+            registros_posteriores = ""
+            nome_exercicio = grupo_exercicio = series_exercicio = repeticoes_exercicio = carga_exercicio = ""
+
+            if posicao >= 0:  # separa os registros antes e depois do escolhido e pega os campos dele
+                indice = 0
+                contador = 0
+                nome = grupo = series = repeticoes = carga = ""
+                for caractere in banco_exercicios:
+                    if caractere == "|":
+                        contador = contador + 1
+                    elif caractere == ";":
+                        registro = nome + "|" + grupo + "|" + series + "|" + repeticoes + "|" + carga + ";"
+                        if indice < posicao:
+                            registros_anteriores = registros_anteriores + registro
+                        elif indice == posicao:
+                            nome_exercicio = nome
+                            grupo_exercicio = grupo
+                            series_exercicio = series
+                            repeticoes_exercicio = repeticoes
+                            carga_exercicio = carga
+                        else:
+                            registros_posteriores = registros_posteriores + registro
+                        indice = indice + 1
+                        contador = 0
+                        nome = grupo = series = repeticoes = carga = ""
+                    elif contador == 0:
+                        nome = nome + caractere
+                    elif contador == 1:
+                        grupo = grupo + caractere
+                    elif contador == 2:
+                        series = series + caractere
+                    elif contador == 3:
+                        repeticoes = repeticoes + caractere
+                    else:
+                        carga = carga + caractere
+
+            if opcao == "4":
+                if input("Remover '" + nome_exercicio + "'? (s/n): ") == "s":
+                    banco_exercicios = registros_anteriores + registros_posteriores
+                    print("Exercício removido!")
+                else:
+                    print("Remoção cancelada.")
+            else:
+                if opcao == "3":
+                    print("(Deixe em branco para manter o valor atual)")
+                for campo in range(5):  # 0 nome, 1 grupo, 2 séries (int), 3 repetições (int), 4 carga (float)
+                    if campo == 0:
+                        rotulo = "Nome do exercício"
+                        atual = nome_exercicio
+                    elif campo == 1:
+                        rotulo = "Grupo muscular"
+                        atual = grupo_exercicio
+                    elif campo == 2:
+                        rotulo = "Séries"
+                        atual = series_exercicio
+                    elif campo == 3:
+                        rotulo = "Repetições"
+                        atual = repeticoes_exercicio
+                    else:
+                        rotulo = "Carga (kg)"
+                        atual = carga_exercicio
+                    if opcao == "3":
+                        rotulo = rotulo + " (atual: " + atual + ")"
+                    lendo = True
+                    while lendo:
+                        texto = input(rotulo + ": ")
+                        texto_limpo = ""
+                        for caractere in texto:
+                            if caractere == "," and campo > 1:
+                                texto_limpo = texto_limpo + "."
+                            elif caractere == "|" or caractere == ";":
+                                texto_limpo = texto_limpo + "-"
+                            else:
+                                texto_limpo = texto_limpo + caractere
+                        valido = True
+                        if texto_limpo == "":
+                            if opcao == "3":
+                                texto_limpo = atual
+                            elif campo != 1:
+                                valido = False
+                        elif campo > 1:
+                            pontos = 0
+                            digitos = 0
+                            for caractere in texto_limpo:
+                                if caractere == ".":
+                                    pontos = pontos + 1
+                                elif caractere in "0123456789":
+                                    digitos = digitos + 1
+                                else:
+                                    valido = False
+                            if digitos == 0 or pontos > 1 or (campo < 4 and pontos > 0):
+                                valido = False
+                        if valido:
+                            if campo == 0:
+                                nome_exercicio = texto_limpo
+                            elif campo == 1:
+                                grupo_exercicio = texto_limpo
+                            elif campo == 2:
+                                series_exercicio = str(int(texto_limpo))
+                            elif campo == 3:
+                                repeticoes_exercicio = str(int(texto_limpo))
+                            else:
+                                carga_exercicio = str(float(texto_limpo))
+                            lendo = False
+                        elif campo == 0:
+                            print("O nome não pode ficar vazio.")
+                        elif campo < 4:
+                            print("Valor inválido: digite um número inteiro.")
+                        else:
+                            print("Valor inválido: digite um número (ex.: 12.5).")
+                registro = nome_exercicio + "|" + grupo_exercicio + "|" + series_exercicio + "|" + repeticoes_exercicio + "|" + carga_exercicio + ";"
+                if opcao == "1":
+                    banco_exercicios = banco_exercicios + registro
+                    print("Exercício cadastrado com sucesso!")
+                else:
+                    banco_exercicios = registros_anteriores + registro + registros_posteriores
+                    print("Exercício atualizado!")
