@@ -107,9 +107,9 @@ Atualize a cada commit (troque ⬜ por ✅).
 | Grupo | Item | Prazo | Preenchido | Commit |
 |:--:|---|---|:--:|:--:|
 | 1 | Identificação | 16/11 | ✅ | ✅ |
-| 1 | Registros dos Ciclos 01, 02, 03 e 04 | 16/11 | ⬜ | ⬜ |
-| 1 | Campo 01 — Instrumento de entrada | 16/11 | ⬜ | ⬜ |
-| 1 | Campo 02 — Aprofundamento | 16/11 | ⬜ | ⬜ |
+| 1 | Registros dos Ciclos 01, 02, 03 e 04 | 16/11 | ✅ | ✅ |
+| 1 | Campo 01 — Instrumento de entrada | 16/11 | ✅ | ✅ |
+| 1 | Campo 02 — Aprofundamento | 16/11 | ✅ | ✅ |
 | 2 | Registros dos Ciclos 05, 06, 07 e 08 | 21/11 | ⬜ | ⬜ |
 | 2 | Checkpoint Conceitual | 21/11 | ⬜ | ⬜ |
 | 2 | Campo 03 — Execução e desvios | 21/11 | ⬜ | ⬜ |
@@ -234,21 +234,20 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 
 **2a. Aprofundamento dos objetos de conhecimento (mínimo 2 referências com síntese da contribuição para a solução):**
 
-- **Referência 1:** _…_ — **Contribuição:** _…_
-- **Referência 2:** _…_ — **Contribuição:** _…_
+- **Referência 1:** _Documentação oficial do Python, seção “4.1 if Statements” (https://docs.python.org/3/tutorial/controlflow.html#if-statements)._ — **Contribuição:** _mostra a estrutura if, elif e else: o elif recebe uma nova condição e o else não recebe condição. Isso ajudou a esclarecer a minha dúvida entre else e elif e a organizar o menu e as validações do CRUD._
+- **Referência 2:** _Videoaula do Curso em Vídeo (https://www.youtube.com/watch?v=LH6OIn2lBaI&list=PLvE-ZAFRgX8hnECDn1v9HNTI71veL3oW0&index=72)._ — **Contribuição:** _aprendi a usar o while de maneira correta e o for como suporte dentro do while._
 
 **2b. Hipótese revisada — o que mudou em relação ao Campo 01 e por quê:**
 
-> _…_
+> _A pesquisa confirmou a hipótese do Campo 01: as falhas vinham da falta de verificação dos dados digitados. Estudando, vi que o while mantém o menu ativo e que as condicionais, com um for de apoio, permitem verificar o dado antes de usá-lo, para o sistema não quebrar._
 
 **2c. Dimensionamento inicial de recursos (recurso, quantidade estimada, justificativa técnica — mínimo 3 itens):**
 
 | RECURSO / MATERIAL / INSUMO | QUANTIDADE ESTIMADA | JUSTIFICATIVA TÉCNICA |
 |---|---|---|
-| _…_ | _…_ | _…_ |
-| _…_ | _…_ | _…_ |
-| _…_ | _…_ | _…_ |
-| _…_ | _…_ | _…_ |
+| _Horas de estudo_ | _~3 h por semana_ | _Tempo para estudar a sintaxe e testar o CRUD a cada ciclo._ |
+| _Casos de teste_ | _6_ | _Texto onde se espera número, campo vazio, número fora da lista, opção inexistente no menu, carga com vírgula e remover sem exercícios cadastrados._ |
+| _Arquivos do projeto_ | _2 (crud_academia.py e LOGBOOK.md)_ | _Código do CRUD e registro do processo._ |
 
 #### Registro do Ciclo 02 — 19/08
 1. **Desafio do ciclo (em 1 frase):** _Entender os tipos de dados e como utilizar o input() com os tipos de dados corretos._
@@ -270,13 +269,13 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 </details>
 
 #### Registro do Ciclo 03 — 26/08
-1. **Desafio do ciclo (em 1 frase):** _…_
-2. **O que implementei (commits / arquivos / links):** _…_
-3. **Objeto(s) de conhecimento mobilizado(s):** _…_
-4. **Desvio ou erro encontrado + causa técnica:** _…_
-5. **Decisão de ajuste + fonte:** _…_
-6. **Feedback recebido e o que mudei:** _…_
-7. **Próximo passo:** _…_
+1. **Desafio do ciclo (em 1 frase):** _Não houve um desafio grande, só a compreensão da sintaxe dos operadores no Python._
+2. **O que implementei (commits / arquivos / links):** _Usei comparações para controlar o menu e validar dados (opcao == "1", nome == "", len(nomes) == 0), and para combinar condições, != na remoção e contas simples como i + 1._
+3. **Objeto(s) de conhecimento mobilizado(s):** _Operadores aritméticos (+, -), relacionais (==, !=, >=, <), lógico (and) e de pertinência (not in); diferença entre = e ==. Não fiz fluxograma._
+4. **Desvio ou erro encontrado + causa técnica:** _Tive dúvida na explicação do professor sobre os operadores, mas compreendi depois de tirar a dúvida na aula._
+5. **Decisão de ajuste + fonte:** _Não tive problemas com essa parte. Fonte: as aulas do professor Rondineli, que foram bem esclarecedoras sobre o tema._
+6. **Feedback recebido e o que mudei:** _Não houve._
+7. **Próximo passo:** _Estudar as condicionais (if, elif, else) para aplicar no CRUD._
 
 ## 🟢 CICLO 04 — 02/09 — Estruturas condicionais: `if`, `elif`, `else`
 
@@ -291,13 +290,13 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 </details>
 
 #### Registro do Ciclo 04 — 02/09
-1. **Desafio do ciclo (em 1 frase):** _…_
-2. **O que implementei (commits / arquivos / links):** _…_
-3. **Objeto(s) de conhecimento mobilizado(s):** _…_
-4. **Desvio ou erro encontrado + causa técnica:** _…_
-5. **Decisão de ajuste + fonte:** _…_
-6. **Feedback recebido e o que mudei:** _…_
-7. **Próximo passo:** _…_
+1. **Desafio do ciclo (em 1 frase):** _Compreender a diferença lógica entre else e elif._
+2. **O que implementei (commits / arquivos / links):** _Usei if, elif e else no menu do CRUD para escolher a ação de cada opção, e else para a opção inválida._
+3. **Objeto(s) de conhecimento mobilizado(s):** _Estrutura condicional if/elif/else. Regras no CRUD: o nome não pode ficar vazio (nome == ""); só lista, atualiza ou remove se houver exercícios (len(nomes) == 0); o número escolhido precisa estar na lista; só remove se o usuário confirmar._
+4. **Desvio ou erro encontrado + causa técnica:** _Tive dúvida entre else e elif. O elif exige uma nova condição, e o else não tem condição e roda quando nenhuma anterior foi verdadeira._
+5. **Decisão de ajuste + fonte:** _Passei a usar elif para as opções do menu e else só para o caso restante. Fonte: aulas do professor Rondineli._
+6. **Feedback recebido e o que mudei:** _Não houve._
+7. **Próximo passo:** _Usar condicionais aninhadas e operadores lógicos no CRUD._
 
 ---
 
