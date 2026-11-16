@@ -106,7 +106,7 @@ Atualize a cada commit (troque ⬜ por ✅).
 
 | Grupo | Item | Prazo | Preenchido | Commit |
 |:--:|---|---|:--:|:--:|
-| 1 | Identificação | 16/11 | ⬜ | ⬜ |
+| 1 | Identificação | 16/11 | ✅ | ✅ |
 | 1 | Registros dos Ciclos 01, 02, 03 e 04 | 16/11 | ⬜ | ⬜ |
 | 1 | Campo 01 — Instrumento de entrada | 16/11 | ⬜ | ⬜ |
 | 1 | Campo 02 — Aprofundamento | 16/11 | ⬜ | ⬜ |
@@ -251,13 +251,13 @@ Cada ciclo tem sua própria seção abaixo, já com o modelo. Se precisar de esp
 | _…_ | _…_ | _…_ |
 
 #### Registro do Ciclo 02 — 19/08
-1. **Desafio do ciclo (em 1 frase):** _…_
-2. **O que implementei (commits / arquivos / links):** _…_
-3. **Objeto(s) de conhecimento mobilizado(s):** _…_
-4. **Desvio ou erro encontrado + causa técnica:** _…_
-5. **Decisão de ajuste + fonte:** _…_
-6. **Feedback recebido e o que mudei:** _…_
-7. **Próximo passo:** _…_
+1. **Desafio do ciclo (em 1 frase):** _Entender os tipos de dados e como utilizar o input() com os tipos de dados corretos._
+2. **O que implementei (commits / arquivos / links):** _Utilizei o input() para receber informações do usuário, como nome do exercício, grupo muscular, séries, repetições e carga. Também utilizei print() para mostrar as informações. Organizei os dados por meio de variáveis._
+3. **Objeto(s) de conhecimento mobilizado(s):** _Variáveis; tipos de dados (str para textos, int para números inteiros e float para números decimais); input() e print()._
+4. **Desvio ou erro encontrado + causa técnica:** _Ao testar uma entrada inválida, digitei doze quilos no campo da carga e o Python gerou um ValueError. Isso aconteceu porque float() tentou converter um texto que não representava um número. O código não verificava se o valor digitado poderia ser convertido antes de utilizá-lo._
+5. **Decisão de ajuste + fonte:** _Passei a validar o texto digitado antes de converter. Um laço for confere cada caractere da entrada, e uma variável valido verifica se a escolha não está vazia e contém apenas números (0 a 9). A validação e as conversões com int() e float() foram adicionadas posteriormente, em 16/11. Fonte: sugestões do Claude (IA)._
+6. **Feedback recebido e o que mudei:** _Não recebi feedback de professor ou colega neste ciclo. As correções posteriores foram feitas com auxílio do Claude (IA)._
+7. **Próximo passo:** _Organizar o código para que os laços não quebrassem caso o usuário digitasse um valor incoerente com o campo designado._
 
 ## 🟢 CICLO 03 — 26/08 — Operadores, fluxogramas e paradigmas
 
